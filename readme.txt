@@ -27,3 +27,4 @@ You can optionally specify a tag that Taglets Feeder always sends to, for every 
 
 == Screenshots ==
 
+1. Taglets Feeder Settings
