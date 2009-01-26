@@ -1,0 +1,33 @@
+#taglets-feeder {
+
+}
+
+#taglets-feeder .options {
+
+	width: 410px;
+
+}
+
+#taglets-feeder .options label{
+	clear:left;
+	float:left;
+	margin: 12px 10px 8px 0px;
+	width: 180px;
+
+}
+
+#taglets-feeder .options input.text, #taglets-feeder .options textarea.text, #taglets-feeder .options input.checkbox{
+	margin: 10px;
+	float:left;
+	width: 200px;
+
+}
+#taglets-feeder .options small{
+	float: left;
+	display: block;
+	margin: -6px 0 10px 200px;
+}
+
+#taglets-feeder p.submit{
+	clear:left;
+}
