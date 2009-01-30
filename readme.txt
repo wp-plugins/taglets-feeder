@@ -13,6 +13,11 @@ Taglets Feeder is a Wordpress plug-in that announces your blog postings on Tagle
 
 For each tag you specify for the post in Wordpress during post creation, when you publish the post, Taglets Feeder sends a comment to those tags with a comment of the form: [post title] [short url]
 
+For example:
+
+    tag:  mrblog
+    comment: Taglets Feeder WP plugin now available on Wordpress.org http://shortna.me/d79fb
+
 You can optionally specify a tag that Taglets Feeder always sends to, for every post you publish (e.g. a tag for the name of your blog), in addition to the tags specified for the post.
 
 == Installation ==
