@@ -5,11 +5,11 @@ Requires at least: 2.5
 Tested up to: 2.7
 Stable tag: trunk
 
-Taglets Feeder is a Wordpress plug-in that pushes updates to Taglets.org when you publish a post.
+Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
 
 == Description ==
 
-Taglets Feeder is a Wordpress plug-in that pushes updates to Taglets.org when you publish a post.
+Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
 
 For each tag you specify for the post in Wordpress during post creation, when you publish the post, Taglets Feeder sends a comment to those tags with a comment of the form: [post title] [short url]
 
