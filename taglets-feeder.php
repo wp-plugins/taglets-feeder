@@ -3,7 +3,7 @@
 Plugin Name: Taglets Feeder
 Plugin URI: http://www.taglets.org/taglets-feeder
 Description: Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
-Version: 0.3
+Version: 0.4
 Author: David Beckemeyer
 Author URI: http://mrblog.org
 */
@@ -102,6 +102,7 @@ function _db_tlfeeder($post_ID){
 			curl_setopt($session, CURLOPT_POST, true);
 			curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 5);
 			curl_setopt($session, CURLOPT_TIMEOUT, 10);
+			curl_setopt($session, CURLOPT_USERAGENT, 'Taglets-Feeder/0.4 (+http://www.taglets.org/taglets-feeder');
 			$post_fields = "comment=" . urlencode($curlPost);
 			curl_setopt($session, CURLOPT_POSTFIELDS, $post_fields);
 			$stream = curl_exec($session);
