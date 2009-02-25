@@ -3,7 +3,7 @@
 Plugin Name: Taglets Feeder
 Plugin URI: http://www.taglets.org/taglets-feeder
 Description: Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
-Version: 0.4
+Version: 0.5
 Author: David Beckemeyer
 Author URI: http://mrblog.org
 */
@@ -95,14 +95,14 @@ function _db_tlfeeder($post_ID){
 		$curlPost = $title .	 " " . $shortUrl;
 		$n = 0;
 		foreach ($tags as $tagname) {
-			$url = "http://a.taglets.org/tag/comment/" . urlencode($tagname);
+			$url = "http://api.taglets.org/tag/comment/" . urlencode($tagname);
 			$session = curl_init($url);
 			curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($session, CURLOPT_FAILONERROR, true);
 			curl_setopt($session, CURLOPT_POST, true);
 			curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 5);
 			curl_setopt($session, CURLOPT_TIMEOUT, 10);
-			curl_setopt($session, CURLOPT_USERAGENT, 'Taglets-Feeder/0.4 (+http://www.taglets.org/taglets-feeder');
+			curl_setopt($session, CURLOPT_USERAGENT, 'Taglets-Feeder/0.4 (+http://www.taglets.org/taglets-feeder)');
 			$post_fields = "comment=" . urlencode($curlPost);
 			curl_setopt($session, CURLOPT_POSTFIELDS, $post_fields);
 			$stream = curl_exec($session);
@@ -110,7 +110,7 @@ function _db_tlfeeder($post_ID){
 			curl_close($session);
                         $httpcode = $header['http_code'];
 			if ($httpcode == "404" && isset($options->autocreate) && $options->autocreate != '' && isset($options->email) && $options->email != '' && isset($options->passwd) && $options->passwd != ''){
-				$url = "http://a.taglets.org/tag/create/" . urlencode($tagname);
+				$url = "http://api.taglets.org/tag/create/" . urlencode($tagname);
 				$session = curl_init($url);
 				curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($session, CURLOPT_FAILONERROR, true);
@@ -124,7 +124,7 @@ function _db_tlfeeder($post_ID){
 				$header  = curl_getinfo( $session );
 				curl_close($session);
 				if ($header['http_code'] == "201") {
-					$url = "http://a.taglets.org/tag/comment/" . urlencode($tagname);
+					$url = "http://api.taglets.org/tag/comment/" . urlencode($tagname);
 					$session = curl_init($url);
 					curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 					curl_setopt($session, CURLOPT_FAILONERROR, true);
