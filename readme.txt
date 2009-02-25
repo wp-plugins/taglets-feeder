@@ -22,7 +22,7 @@ You can optionally specify a tag that Taglets Feeder always sends to, for every 
 
 You can also specify a excluded category such that for posts assigned to that category, Taglets Feeder will not notify Taglets.org.
 
-The normal behavior of Taglets Feeder is to attempt to post to all tags (send notifications for all tags) and ignore errors for tags that do not exist on Taglets.org.  If you prefer, you can use the "auto-create" feature of Taglets Feeder to cause it to dynamically create any non-existent tags on the fly.  If you activate the "auto-create" option in Taglets Feeder Settings, you must also enter your Taglets.org email and password so that Taglets Feeder can craeet the tag on your behalf.
+The normal behavior of Taglets Feeder is to attempt to post to all tags (send notifications for all tags) and ignore errors for tags that do not exist on Taglets.org.  If you prefer, you can use the "auto-create" feature of Taglets Feeder to cause it to dynamically create any non-existent tags on the fly.  If you activate the "auto-create" option in Taglets Feeder Settings, you must also enter your Taglets.org email and password so that Taglets Feeder can create the tag on your behalf.
 
 == Installation ==
 
