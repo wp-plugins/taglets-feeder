@@ -2,7 +2,7 @@
 Contributors: taglets
 Tags: taglets, tags
 Requires at least: 2.5
-Tested up to: 2.7
+Tested up to: 2.8.4
 Stable tag: trunk
 
 Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
@@ -16,7 +16,7 @@ For each tag you specify for the post in Wordpress during post creation, when yo
 For example:
 
     tag:  mrblog
-    comment: Taglets Feeder WP plugin now available on Wordpress.org http://shortna.me/d79fb
+    comment: Taglets Feeder WP plugin now available on Wordpress.org http://is.gd/d79fb
 
 You can optionally specify a tag that Taglets Feeder always sends to, for every post you publish (e.g. a tag for the name of your blog), in addition to the tags specified for the post.
 
@@ -37,3 +37,12 @@ The normal behavior of Taglets Feeder is to attempt to post to all tags (send no
 == Screenshots ==
 
 1. Taglets Feeder Settings
+
+== Changelog ==
+
+= 1.0 =
+* Change to use id.gd url shortening (replacing shortna.me)
+* Been in use long enough by enough people to call this version 1.0
+
+= 0.5 =
+* Initial release

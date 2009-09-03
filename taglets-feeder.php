@@ -3,7 +3,7 @@
 Plugin Name: Taglets Feeder
 Plugin URI: http://www.taglets.org/taglets-feeder
 Description: Taglets Feeder is a Wordpress plug-in that announces your blog postings on Taglets.org when you publish a post.
-Version: 0.5
+Version: 1.0
 Author: David Beckemeyer
 Author URI: http://mrblog.org
 */
@@ -56,28 +56,26 @@ function _db_tlfeeder($post_ID){
 			$postUrl = get_permalink($post_ID);
 		}
 
-		if ( isset($options->preview) && $options->preview !=''){
-			$shortnameUrl = "http://shortna.me/v/";
-		}else {
-			$shortnameUrl = "http://shortna.me/";
-		}
-
 		if (function_exists('curl_init') && $postUrl) {
 			$encodedUrl = urlencode($postUrl);
-			$getUrl = "http://shortna.me/hash/?api=2&snURL=".$encodedUrl;
+			$getUrl = "http://is.gd/api.php?longurl=".$encodedUrl;
 			$session = curl_init($getUrl);
 			curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($session, CURLOPT_FAILONERROR, true);
 			curl_setopt($session, CURLOPT_GET, true);
 			curl_setopt($session, CURLOPT_CONNECTTIMEOUT, 20);
 			curl_setopt($session, CURLOPT_TIMEOUT, 20);
-			$shortnameHash = curl_exec($session);
+			$shortnameUrl = curl_exec($session);
 			curl_close($session);
 
-			if(stristr($shortnameHash, 'ERROR') === FALSE || (isset($shortnameHash) && $shortnameHash != '')) {
-				$shortUrl = $shortnameUrl . $shortnameHash;
+			if(stristr($shortnameUrl, 'ERROR') === FALSE || (isset($shortnameUrl) && $shortnameUrl != '')) {
+				if ( isset($options->preview) && $options->preview !=''){
+					$shortUrl = $shortnameUrl . "-";
+				} else {
+					$shortUrl = $shortnameUrl;
+				}
 			}else {
-				$postUrl = $shortUrl;
+				$shortUrl = $postUrl;
 			}
 		}
 
